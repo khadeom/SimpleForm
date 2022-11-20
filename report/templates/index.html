@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="">
+  <title>Project</title>
+  
+</head>
+<body class="Form">
+  <form method='post' action="{% url 'incident' %}" id='save'>
+    {% csrf_token %}
+    <label for="loc">Location</label>
+    <select id="loc" name="loc">
+    <option value="Ch">Corporate Headoffice</option>
+    <option value="Od">Operations Department</option>
+    <option value="Ws">Work Station</option>
+    <option value="Md">Marketing Division</option>
+  </select><br>
+   <label for="ID">Incident Department</label>
+   <textarea id="ID" name="inci_dept" rows="2" cols="40"></textarea><br>
+
+    <label for="datetime">Date and Time of incident</label>
+    <input type="datetime-local" id="datetime" name="datetime"><br>
+
+    <label for="IL">Incident Location</label>
+   <textarea id="IL" name="inci_loc" rows="2" cols="40"></textarea><br>
+
+   <label for="ins">Initial severity</label>
+    <select id="ins" name="ins">
+    <option value="mild">Mild</option>
+    <option value="moderate">Moderate</option>
+    <option value="severe">Severe</option>
+    <option value="fatal">Fatal</option>
+  </select><br>
+
+  <label for="IA">Immidiate Action Taken:</label>
+  <textarea id="IA" name="immid_Act" rows="2" cols="40"></textarea><br>
+  <label for="IL">Sub incident types:</label>
+  <input type="checkbox" id="Env" name="Env" value="Env">
+  <label for="Env"> Enviornmental Incident</label><br>
+  <input type="checkbox" id="inj" name="inj" value="inj">
+  <label for="inj"> Injury/illness</label><br>
+  <input type="checkbox" id="Prop" name="prop" value="prop">
+  <label for="prop"> Property Damage</label><br>
+  <input type="checkbox" id="veh" name="veh" value="veh">
+  <label for="veh">Vehicle</label><br>
+
+  <label for="Reporter">Reported By: </label><br>
+
+  <button type="submit" value="submit"  style="width: auto; height: 30px; background-color: #ee3c4d; color: #fff; border-radius: 10px;">Generate <span id="feature-btn">(All the features selected)</span></button>
+
+</form>
+
+</body>
